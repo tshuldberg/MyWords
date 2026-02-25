@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "MyWords",
+    "slug": "mywords-standalone",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "mywords",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mywords.app"
+    },
+    "android": {
+      "package": "com.mywords.app"
+    },
+    "plugins": ["expo-router"]
+  }
+}

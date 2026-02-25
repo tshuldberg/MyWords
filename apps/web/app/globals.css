@@ -1,0 +1,28 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d0d0d;
+  --surface: #151515;
+  --surface-elevated: #1d1d1d;
+  --border: #2b2b2b;
+  --text: #f3f3f3;
+  --muted: #b5b5b5;
+  --accent: #4aa8f8;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top right, #102338 0%, var(--bg) 46%);
+  color: var(--text);
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
