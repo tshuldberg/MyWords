@@ -5,9 +5,15 @@
   --surface-elevated: #1d1d1d;
   --border: #2b2b2b;
   --text: #f3f3f3;
+  --text-secondary: #b5b5b5;
+  --text-tertiary: #8c8c8c;
   --muted: #b5b5b5;
   --accent: #4aa8f8;
+  --accent-words: #4aa8f8;
   --danger: #ff6b6b;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 }
 
 * {

@@ -85,6 +85,9 @@ export default function HomeScreen() {
   );
   const pronunciationLabels = useMemo(() => getPronunciationLabels(result), [result]);
   const formLabels = useMemo(() => getFormLabels(result), [result]);
+  const resultWordHistory = result?.wordHistory ?? [];
+  const resultRhymes = result?.rhymes ?? [];
+  const resultNearbyWords = result?.nearbyWords ?? [];
 
   useEffect(() => {
     let active = true;
@@ -198,10 +201,10 @@ export default function HomeScreen() {
             </View>
           ) : null}
 
-          {result.wordHistory.length > 0 ? (
+          {resultWordHistory.length > 0 ? (
             <View style={styles.section}>
               <Text style={styles.label}>Word History</Text>
-              {result.wordHistory.map((line, index) => (
+              {resultWordHistory.map((line, index) => (
                 <Text key={`history-${index}`} style={styles.caption}>• {line}</Text>
               ))}
             </View>
@@ -221,17 +224,17 @@ export default function HomeScreen() {
             </View>
           ) : null}
 
-          {result.rhymes.length > 0 ? (
+          {resultRhymes.length > 0 ? (
             <View style={styles.section}>
               <Text style={styles.label}>Rhymes</Text>
-              <Text style={styles.caption}>{result.rhymes.join(', ')}</Text>
+              <Text style={styles.caption}>{resultRhymes.join(', ')}</Text>
             </View>
           ) : null}
 
-          {result.nearbyWords.length > 0 ? (
+          {resultNearbyWords.length > 0 ? (
             <View style={styles.section}>
               <Text style={styles.label}>Nearby Words</Text>
-              <Text style={styles.caption}>{result.nearbyWords.join(', ')}</Text>
+              <Text style={styles.caption}>{resultNearbyWords.join(', ')}</Text>
             </View>
           ) : null}
 
