@@ -48,3 +48,28 @@ pnpm typecheck
 - `apps/web/app/page.tsx`: standalone dictionary/thesaurus interface.
 - `apps/mobile/app/index.tsx`: standalone mobile lookup interface.
 - `packages/shared/src/index.ts`: shared lookup API logic (dictionary, thesaurus, rhymes, history enrichment).
+
+
+## File Ownership Zones (Parallel Agent Work)
+
+| Zone | Owner | Files |
+|------|-------|-------|
+| Root configs | lead | `package.json`, `turbo.json`, `pnpm-workspace.yaml` |
+| Shared logic | core-dev | `packages/shared/**` |
+| Mobile App | mobile-dev | `apps/mobile/**` |
+| Web App | web-dev | `apps/web/**` |
+| Tests | tester | `**/*.test.ts`, `**/*.test.tsx` |
+| Docs | docs-dev | `CLAUDE.md`, `AGENTS.md` |
+
+## Agent Teams Strategy
+
+When 2+ plans target this project with overlapping scope, use an Agent Team instead of parallel subagents. Custom agent definitions from `/Users/trey/Desktop/Apps/.claude/agents/` and `/Users/trey/Desktop/Apps/MyLife/.claude/agents/`:
+- `plan-executor` -- Execute plan phases with testing and verification
+- `test-writer` -- Write tests without modifying source code
+- `docs-agent` -- Update documentation
+- `reviewer` -- Read-only code review (uses Sonnet)
+
+Agents working in different File Ownership Zones can run in parallel without conflicts. Agents sharing a zone must coordinate via the team task list.
+
+## Writing Style
+- Do not use em dashes in documents or writing.
